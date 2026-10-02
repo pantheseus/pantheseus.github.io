@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Esakki Eswar | Software Developer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{--ink:#18181b;--mut:#6b7280;--line:#e7e7ea;--bg:#fff;--alt:#fafafa;--blue:#2563eb;--card:#fff;--soft:#f4f4f5;--sub:#52525b;--green:#059669;--mono:'JetBrains Mono',ui-monospace,Menlo,monospace}
+[data-theme=dark]{--ink:#f4f4f5;--mut:#a1a1aa;--line:#2a2a2e;--bg:#0c0c0e;--alt:#111114;--card:#17171a;--soft:#1f1f23;--sub:#a1a1aa}
+[data-theme=dark] .btn.dark,[data-theme=dark] .gh{color:#0c0c0e}
+[data-theme=dark] .photo{box-shadow:0 0 0 6px rgba(255,255,255,.06),0 20px 50px rgba(99,102,241,.25)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1160px;margin:0 auto;padding:0 24px}
+section{padding:96px 0}
+.alt{background:var(--alt)}
+.label{font-family:var(--mono);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mut);margin-bottom:8px}
+h2{font-size:30px;font-weight:700;letter-spacing:-.02em;line-height:1.2}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;border-radius:999px;font-size:13px;font-weight:500;border:1px solid var(--line);background:var(--card);cursor:pointer}
+.btn.dark{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip{font-family:var(--mono);font-size:10px;background:var(--soft);color:var(--mut);padding:2px 7px;border-radius:4px;letter-spacing:.05em;text-transform:uppercase}
+/* hero */
+.hero{min-height:100vh;padding:0;display:flex;flex-direction:column;border-bottom:1px solid var(--line)}
+.hero .wrap{flex:1;display:grid;grid-template-columns:1.2fr 1fr;gap:48px;align-items:center;padding-top:100px}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;letter-spacing:.18em;border:1px solid var(--line);border-radius:999px;padding:3px 10px;color:var(--mut);background:var(--soft)}
+.hero h1{font-size:clamp(40px,6vw,64px);font-weight:700;letter-spacing:-.03em;line-height:1.1;margin:14px 0 14px}
+.sub{font-size:22px;color:var(--sub);max-width:480px;line-height:1.4;margin-bottom:18px}
+.hero p.d{font-size:15px;color:var(--mut);max-width:440px;margin-bottom:28px}
+.cta{display:flex;gap:12px;flex-wrap:wrap}
+.connect{display:flex;align-items:center;gap:16px;flex-wrap:wrap;margin-top:32px;font-size:12px;color:var(--mut)}
+.connect .c{font-family:var(--mono);letter-spacing:.15em;font-size:11px}
+.connect a:hover{color:var(--ink)}
+.photo{justify-self:end;width:min(100%,280px);aspect-ratio:1;border-radius:20px;background:#d9d8f4;position:relative;display:grid;place-items:center;box-shadow:0 0 0 6px rgba(255,255,255,.7),0 20px 50px rgba(99,102,241,.25);overflow:hidden}
+.photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+/* .photo .ic{width:30px;height:30px;border:2px solid #4f46e5;border-radius:6px;opacity:.7} */
+.pill{position:absolute;right:14px;bottom:14px;background:var(--card);border-radius:999px;padding:5px 12px;font-family:var(--mono);font-size:10px;display:flex;align-items:center;gap:6px;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block}
+.scroll{padding-top:28px!important;text-align:center;font-family:var(--mono);font-size:10px;letter-spacing:.15em;color:var(--mut);padding:0 0 40px}
+/* about */
+.about{display:grid;grid-template-columns:1.1fr 1fr;gap:56px;margin-top:32px}
+.about p{font-size:16px;color:var(--sub);margin-bottom:18px}
+.about p b{color:var(--ink);font-weight:500}
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.chips span{display:flex;align-items:center;gap:8px;border:1px solid var(--line);border-radius:8px;padding:8px 12px;font-size:11px;font-weight:500;background:var(--card)}
+.code{border:1px solid var(--line);border-radius:14px;padding:18px 20px;font-family:var(--mono);font-size:11px;line-height:1.7;box-shadow:0 8px 30px rgba(0,0,0,.05);align-self:start;overflow-x:auto}
+.code .bar{display:flex;align-items:center;gap:6px;margin-bottom:14px}
+.code .bar i{width:10px;height:10px;border-radius:50%}
+.code .bar em{margin-left:auto;font-style:normal;color:#9ca3af;font-size:10px}
+.code pre{font:inherit;white-space:pre}
+.k{color:#7c3aed}.s{color:#047857}
+/* tools */
+.thead{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:40px}
+.thead p{font-size:13px;color:var(--mut)}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card>h3{display:flex;justify-content:space-between;align-items:center;font-size:13px;font-weight:600;margin-bottom:18px}
+.card>h3 span{font-family:var(--mono);font-size:10px;font-weight:400;color:#9ca3af}
+.tools{display:grid;grid-template-columns:1fr 1fr;gap:18px 16px;min-height:150px}
+.tool{display:flex;gap:10px;align-items:flex-start}
+.tool i{flex:none;width:28px;height:28px;border-radius:8px;background:var(--soft);display:grid;place-items:center;font-style:normal;font-size:13px}
+.tool b{display:block;font-size:11px;font-weight:600}
+.tool small{display:block;font-size:10px;color:var(--mut);line-height:1.4}
+/* projects */
+.proj{border:1px solid var(--line);border-radius:18px;padding:36px;display:grid;grid-template-columns:1.25fr 1fr;gap:36px;margin-top:28px}
+.proj .meta{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--mut);margin-bottom:10px}
+.proj .meta a{color:var(--blue);font-family:Inter;letter-spacing:0;font-size:11px;font-weight:500}
+.proj h3{font-size:26px;letter-spacing:-.02em;margin-bottom:12px}
+.proj p{font-size:13px;color:var(--sub);margin-bottom:18px}
+.stack{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:26px}
+.stack span{font-family:var(--mono);font-size:10px;border:1px solid var(--line);border-radius:6px;padding:4px 10px;background:var(--soft)}
+.kc{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--mut);margin-bottom:8px}
+.proj ul{list-style:none;margin-bottom:18px}
+.proj li{font-size:12px;color:var(--sub);padding:2px 0}
+.proj li:before{content:"✓";color:var(--blue);margin-right:10px;font-size:11px}
+.gh{padding:8px 14px;font-size:11px;background:var(--ink);color:#fff;border-color:var(--ink)}
+.pipe{background:var(--soft);border:1px solid var(--line);border-radius:12px;padding:18px;align-self:start}
+.pipe .h{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--mut);margin-bottom:14px}
+.pipe .h i{width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.step{display:flex;align-items:center;gap:12px;background:var(--card);border:1px solid var(--line);border-radius:8px;padding:10px 12px;margin-bottom:10px}
+.step>i{flex:none;width:20px;height:20px;border-radius:50%;background:#eef2ff;color:var(--blue);font-style:normal;font-size:10px;font-weight:600;display:grid;place-items:center}
+.step b{display:block;font-size:11px;font-weight:600}
+.step small{display:block;font-family:var(--mono);font-size:9px;color:#9ca3af}
+.step:after{content:"⌄";margin-left:auto;color:#c4c4cc;font-size:12px}
+.step:last-child{margin-bottom:0}
+/* edu */
+.two{display:grid;grid-template-columns:1fr 1.2fr;gap:56px}
+.edu{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:22px;margin-top:20px}
+.edu:first-of-type{margin-top:28px}
+.edu .t{display:flex;justify-content:space-between;gap:12px;align-items:center}
+.edu h4{font-size:14px;font-weight:600}
+.badge{font-family:var(--mono);font-size:10px;padding:3px 10px;border-radius:999px;background:#ecfdf5;color:var(--green);border:1px solid #a7f3d0;white-space:nowrap}
+.badge.g{background:var(--soft);color:var(--mut);border-color:var(--line)}
+.edu p{font-size:12px;color:var(--mut);margin:6px 0 14px}
+.edu small{font-family:var(--mono);font-size:10px;color:#9ca3af}
+.certs{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:28px}
+.certs .tool{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;align-items:center}
+.certs .tool b{font-size:11px}
+/* contact */
+.contact{text-align:center}
+.contact h2{font-size:clamp(34px,5vw,48px);letter-spacing:-.03em;margin:10px 0 14px}
+.contact p{font-size:15px;color:var(--mut);max-width:420px;margin:0 auto 28px}
+.contact .cta{justify-content:center}
+.mail{display:inline-flex;align-items:center;gap:8px;margin-top:36px;border:1px solid var(--line);border-radius:999px;padding:4px 14px;font-family:var(--mono);font-size:10px;color:var(--mut)}
+/* nav & footer */
+nav{position:fixed;top:0;left:0;right:0;z-index:50;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+.logo{display:flex;align-items:center;gap:8px;font-size:13px;font-weight:600}
+.logo i{width:6px;height:6px;border-radius:50%;background:var(--blue)}
+nav ul{list-style:none;display:flex;gap:28px;font-size:12px;color:var(--mut)}
+nav ul a:hover{color:var(--ink)}
+.theme{background:none;border:0;cursor:pointer;font-size:15px;color:var(--mut);width:32px;height:32px;border-radius:8px}
+.theme:hover{background:var(--soft)}
+footer{border-top:1px solid var(--line);padding:24px 0;font-size:11px;color:var(--mut)}
+footer .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+footer b{color:var(--ink);font-weight:600;margin-right:10px}
+footer .l{display:flex;gap:22px}
+footer a:hover{color:var(--ink)}
+.btn:focus-visible,a:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
+@media(max-width:860px){
+ section{padding:64px 0}
+ .hero .wrap,.about,.grid2,.proj,.two{grid-template-columns:1fr}
+ .photo{justify-self:start;order:-1;width:min(100%,300px)}
+ .hero .wrap{padding-top:64px;gap:32px}
+ .proj{padding:22px}
+}
+@media(max-width:640px){nav ul{display:none}}
+@media(max-width:520px){.tools,.certs{grid-template-columns:1fr}.sub{font-size:19px}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+ <a class="logo" href="#top"><i></i>Esakki Eswar</a>
+ <ul><li><a href="#about">About</a></li><li><a href="#skills">Skills</a></li><li><a href="#projects">Projects</a></li><li><a href="#education">Education</a></li><li><a href="#contact">Contact</a></li></ul>
+ <button class="theme" id="theme" aria-label="Toggle theme">☾</button>
+</div></nav>
+
+<header class="hero" id="top">
+ <div class="wrap">
+  <div>
+   <span class="tag">SOFTWARE DEVELOPER & AI ENGINEER</span>
+   <h1>Esakki Eswar</h1>
+   <p class="sub">Building practical software and exploring intelligent systems.</p>
+   <p class="d">I'm an MCA student focused on software development, backend systems, and AI-powered applications. I enjoy turning ideas into working products and learning by building.</p>
+   <div class="cta">
+    <a class="btn dark" href="#projects">View Projects <span>⌄</span></a>
+    <a class="btn" href="#contact">Get in Touch</a>
+    <a class="btn" href="resume.pdf" download="Esakki_Eswar_Resume.pdf" target="_blank" rel="noopener">⤓ Resume</a>
+   </div>
+   <div class="connect"><span class="c">CONNECT</span>
+    <a href="https://github.com/pantheseus">⌥ GitHub</a><span>·</span>
+    <a href="#">in LinkedIn</a><span>·</span>
+    <a href="mailto:eswarkandhasamy@gmail.com">✉ Email</a>
+   </div>
+  </div>
+  <div class="photo">
+   <img src="Potrait.png" alt="Esakki Eswar">
+   <div class="ic"></div>
+   <div class="pill"><span class="dot"></span>Available for projects</div>
+  </div>
+ </div>
+ <div class="scroll">SCROLL TO EXPLORE<br>↓</div>
+</header>
+
+<section id="about">
+ <div class="wrap">
+  <div class="label">Background</div>
+  <h2>About Me</h2>
+  <div class="about">
+   <div>
+    <p style="margin-top:8px">I'm an MCA student and software developer who enjoys building things from the ground up. My work spans frontend development, backend APIs, databases, and AI-powered applications. I learn best by building, breaking things, fixing them, and understanding why they work.</p>
+    <p>Recently, I've been spending more time with <b>Spring Boot</b>, <b>FastAPI</b>, <b>LangChain</b>, <b>LangGraph</b>, and <b>RAG systems</b>. I'm interested in creating software that is not only functional, but also useful in the real world.</p>
+    <div class="label" style="margin-top:28px">Primary Engineering Focus</div>
+    <div class="chips">
+     <span>Software Development <em class="chip">Core</em></span>
+     <span>Full-Stack Development <em class="chip">Web</em></span>
+     <span>Backend Development <em class="chip">Systems</em></span>
+     <span>AI / LLM Applications <em class="chip">Intelligence</em></span>
+     <span>RAG Systems <em class="chip">Retrieval</em></span>
+     <span>REST APIs <em class="chip">Architecture</em></span>
+    </div>
+   </div>
+   <div class="code">
+    <div class="bar"><i style="background:#ef4444"></i><i style="background:#f59e0b"></i><i style="background:#22c55e"></i><em>developer.config.json</em></div>
+<pre>{
+  <span class="k">"engineer"</span>: <span class="s">"Esakki Eswar"</span>,
+  <span class="k">"role"</span>: <span class="s">"Software Developer"</span>,
+  <span class="k">"education"</span>: {
+    <span class="k">"current"</span>: <span class="s">"MCA (2026-2028)"</span>,
+    <span class="k">"institution"</span>: <span class="s">"Francis Xavier Engg College"</span>
+  },
+  <span class="k">"mindset"</span>: [
+    <span class="s">"build-from-ground-up"</span>,
+    <span class="s">"clean-architecture"</span>,
+    <span class="s">"practical-ai-systems"</span>
+  ],
+  <span class="k">"status"</span>: <span class="s">"Shipping code &amp; exploring agents"</span>
+}</pre>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="alt" id="skills">
+ <div class="wrap">
+  <div class="thead">
+   <div><div class="label">Technical Capabilities</div><h2>Tools I Work With</h2></div>
+   <p>Grouped by domain. Clean, modular, and battle-tested.</p>
+  </div>
+  <div class="grid2">
+   <div class="card"><h3>Languages <span>4 tools</span></h3><div class="tools">
+    <div class="tool"><div><b>Java</b><small>Enterprise OOP &amp; backend logic</small></div></div>
+    <div class="tool"><div><b>Python</b><small>Scripting, AI agents &amp; pipelines</small></div></div>
+    <div class="tool"><div><b>JavaScript</b><small>Interactive UI &amp; asynchronous client</small></div></div>
+    <div class="tool"><div><b>SQL</b><small>Relational queries, schema design &amp; joins</small></div></div>
+   </div></div>
+   <div class="card"><h3>AI / LLM <span>5 tools</span></h3><div class="tools">
+    <div class="tool"><div><b>LangChain</b><small>Composable prompt &amp; chain orchestration</small></div></div>
+    <div class="tool"><div><b>LangGraph</b><small>Multi-agent cyclic execution flows</small></div></div>
+    <div class="tool"><div><b>RAG</b><small>Retrieval Augmented Generation pipelines</small></div></div>
+    <div class="tool"><div><b>ChromaDB</b><small>Vector embeddings store &amp; semantic search</small></div></div>
+    <div class="tool"><div><b>Groq API</b><small>Ultra low-latency LPU model inference</small></div></div>
+   </div></div>
+   <div class="card"><h3>Web &amp; Backend <span>5 tools</span></h3><div class="tools">
+    <div class="tool"><div><b>React</b><small>Component architecture &amp; reactive state</small></div></div>
+    <div class="tool"><div><b>Spring Boot</b><small>Production microservices &amp; security</small></div></div>
+    <div class="tool"><div><b>FastAPI</b><small>Asynchronous Python RESTful endpoints</small></div></div>
+    <div class="tool"><div><b>REST APIs</b><small>Clean contract design &amp; HTTP specifications</small></div></div>
+    <div class="tool"><div><b>HTML5 &amp; CSS3</b><small>Semantic structure &amp; responsive layouts</small></div></div>
+   </div></div>
+   <div class="card"><h3>Database &amp; Tools <span>3 tools</span></h3><div class="tools">
+    <div class="tool"><div><b>MySQL</b><small>Relational schema, indexing &amp; ACID</small></div></div>
+    <div class="tool"><div><b>Git</b><small>Version control &amp; collaborative branch workflows</small></div></div>
+    <div class="tool"><div><b>GitHub</b><small>Repository hosting, actions &amp; code review</small></div></div>
+   </div></div>
+  </div>
+ </div>
+</section>
+
+<section id="projects">
+ <div class="wrap">
+  <div class="label">Featured Work</div>
+  <h2>Things I've Built</h2>
+  <p style="font-size:14px;color:var(--mut);margin-top:8px;max-width:420px">A few projects that show what I've been learning and building. Focused on full-stack robustness and multi-agent intelligence.</p>
+
+  <article class="proj">
+   <div>
+    <div class="meta">PROJECT 01 · <a href="#">Full-Stack &amp; Enterprise Backend</a></div>
+    <h3>Full-Stack E-Commerce Platform</h3>
+    <p>A full-stack e-commerce application with authentication, product browsing, cart management, and order processing. The backend uses Spring Boot and Spring Security with Spring Data JPA, while the React frontend handles state and API communication.</p>
+    <div class="stack"><span>React</span><span>Java</span><span>MySQL</span><span>Spring Security</span><span>Spring Data JPA</span></div>
+    <a class="btn gh" href="https://github.com/pantheseus">⌥ View on GitHub</a>
+   </div>
+   <div class="pipe">
+    <div class="h">PIPELINE ARCHITECTURE <i></i></div>
+    <div class="step"><i>1</i><div><b>Authentication</b><small>Spring Security / JWT</small></div></div>
+    <div class="step"><i>2</i><div><b>Products</b><small>JPA Catalogs &amp; Filtering</small></div></div>
+    <div class="step"><i>3</i><div><b>Cart</b><small>Session &amp; DB Persistence</small></div></div>
+    <div class="step"><i>4</i><div><b>Orders</b><small>ACID Transaction Processing</small></div></div>
+   </div>
+  </article>
+
+  <article class="proj">
+   <div>
+    <div class="meta">PROJECT 02 · <a href="#">AI Engineering &amp; Multi-Agent Systems</a></div>
+    <h3>RAG Document Q&amp;A System</h3>
+    <p>A document question-answering system built around a multi-step agent workflow. A Researcher Agent handles information retrieval while a Writer Agent organizes the final response, with streaming responses delivered through FastAPI SSE.</p>
+    <div class="kc">KEY CAPABILITIES</div>
+    <ul><li>Token-by-token response streaming via SSE</li><li>Structured Markdown export</li><li>Automated PDF export</li></ul>
+    <div class="stack"><span>Python</span><span>FastAPI</span><span>LangChain</span><span>LangGraph</span><span>Groq API</span><span>RAG</span></div>
+    <a class="btn gh" href="https://github.com/pantheseus">⌥ View on GitHub</a>
+   </div>
+   <div class="pipe">
+    <div class="h">PIPELINE ARCHITECTURE <i></i></div>
+    <div class="step"><i>1</i><div><b>Documents</b><small>Chunking &amp; ChromaDB</small></div></div>
+    <div class="step"><i>2</i><div><b>Retrieval</b><small>Hybrid Semantic Search</small></div></div>
+    <div class="step"><i>3</i><div><b>Researcher Agent</b><small>LangGraph Source Extraction</small></div></div>
+    <div class="step"><i>4</i><div><b>Writer Agent</b><small>Groq Synthesis &amp; Citations</small></div></div>
+    <div class="step"><i>5</i><div><b>Response</b><small>FastAPI SSE Stream</small></div></div>
+   </div>
+  </article>
+ </div>
+</section>
+
+<section class="alt" id="education">
+ <div class="wrap two">
+  <div>
+   <div class="label">Academic Foundation</div>
+   <h2>Education</h2>
+   <div class="edu"><div class="t"><h4>Master of Computer Application (MCA)</h4><span class="badge">2026 – 2028</span></div><p>Francis Xavier Engineering College, Tirunelveli</p><small>Current Education</small></div>
+   <div class="edu"><div class="t"><h4>B.S. in Computer Science</h4><span class="badge g">2023 – 2026</span></div><p>The MDT Hindu College, Tirunelveli</p><small>Undergraduate Degree</small></div>
+  </div>
+  <div>
+   <div class="label">Verified Learning</div>
+   <h2>Certifications</h2>
+   <div class="certs">
+    <div class="tool"><div><b>Java Certified</b><small>Wintech Computer Education</small></div></div>
+    <div class="tool"><div><b>Foundation of Coding with Python</b><small>Infosys Springboard</small></div></div>
+    <div class="tool"><div><b>JavaScript Certified</b><small>GeeksforGeeks</small></div></div>
+    <div class="tool"><div><b>SQL &amp; Relational Databases</b><small>IBM Developer Skills Network</small></div></div>
+   </div>
+  </div>
+ </div>
+</section>
+
+<section class="contact" id="contact">
+ <div class="wrap">
+  <div class="label">Get in Touch</div>
+  <h2>Let's Build Something.</h2>
+  <p>Have a project idea, an opportunity, or just want to talk about software and AI? Feel free to reach out.</p>
+  <div class="cta">
+   <a class="btn dark" href="mailto:eswarkandhasamy@gmail.com">✉ Email Me</a>
+   <a class="btn" href="https://github.com/pantheseus">⌥ pantheseus</a>
+  </div>
+  <div class="mail"><span class="dot"></span>eswarkandhasamy@gmail.com</div>
+ </div>
+</section>
+
+<footer><div class="wrap">
+ <div><b>Esakki Eswar</b>Software Developer</div>
+ <div class="l"><a href="https://github.com/pantheseus">GitHub</a><a href="#">LinkedIn</a><a href="mailto:eswarkandhasamy@gmail.com">Email</a></div>
+ <div>© 2026 Esakki Eswar</div>
+</div></footer>
+<script>
+const t=document.getElementById('theme'),r=document.documentElement;
+t.onclick=()=>{const d=r.dataset.theme==='dark';r.dataset.theme=d?'light':'dark';t.textContent=d?'☾':'☀'};
+</script>
+</body>
+</html>
